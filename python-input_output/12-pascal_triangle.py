@@ -33,9 +33,9 @@ def pascal_triangle(n):
             prev_row = triangle[-1]
 
             # Calculate intermediate elements
-            # Iterate from the second element up to (but not including) the 
+            # Iterate from the second element up to (but not including) the
             for j in range(1, i):
-                # The value is the sum of the two elements above it in the 
+                # The value is the sum of the two elements above it in the
                 next_value = prev_row[j - 1] + prev_row[j]
                 current_row.append(next_value)
 
