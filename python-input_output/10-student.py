@@ -44,7 +44,6 @@ class Student:
                 if hasattr(self, key):
                     filtered_dict[key] = getattr(self, key)
             return filtered_dict
-        
         # Otherwise, return all public instance attributes
         # __dict__ retrieves all attributes set on the instance (which public)
         return self.__dict__
