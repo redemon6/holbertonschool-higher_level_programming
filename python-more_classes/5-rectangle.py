@@ -104,8 +104,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns the informal, nicely printable string representation of the Rectangle.
-
+        Returns the informal, nicely printable string representation of the
+        Rectangle.
         Prints the rectangle using the character '#'. If width or height is 0,
         it returns an empty string.
 
@@ -124,8 +124,8 @@ class Rectangle:
         """
         Returns the "official" string representation of the Rectangle.
 
-        The format is designed to be executable by eval() to recreate the instance.
-
+        The format is designed to be executable by eval() to recreate the
+        instance.
         Returns:
             str: A string in the format "Rectangle(width, height)".
         """
