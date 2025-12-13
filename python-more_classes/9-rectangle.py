@@ -171,7 +171,7 @@ class Rectangle:
         Returns a new Rectangle instance (a square) with
         width == height == size.
         Args:
-            size (int, optional): The side length for the square. Defaults to 0.
+            size (int, optional): The side length for the square. Default to 0
 
         Returns:
             Rectangle: A new Rectangle instance.
