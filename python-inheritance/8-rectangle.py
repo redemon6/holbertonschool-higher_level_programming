@@ -6,6 +6,9 @@ and uses the inherited integer_validator for attribute validation.
 """
 
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
 class BaseGeometry:
     """
     A base class for geometric shapes, providing an interface for area
