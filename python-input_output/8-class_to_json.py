@@ -17,4 +17,3 @@ def class_to_json(obj):
         dict: A dictionary containing the object's attributes.
     """
     return obj.__dict__
-
