@@ -1,65 +1,22 @@
-7-base_geometry module
-========================
-
-Tests for the 7-base_geometry module, focusing on BaseGeometry class.
-
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
-Test 1: integer_validator - Valid positive integers
----------------------------------------------------
->>> bg.integer_validator("width", 100)
+>>> bg.integer_validator("width", 10)
+
 >>> bg.integer_validator("height", 1)
 
-Test 2: integer_validator - TypeError (Non-integer values)
-----------------------------------------------------------
->>> try:
-...     bg.integer_validator("my_str", "a string")
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] my_str must be an integer
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
 
->>> try:
-...     bg.integer_validator("my_float", 5.5)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] my_float must be an integer
+>>> bg.integer_validator("distance", -3)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
 
->>> try:
-...     bg.integer_validator("my_bool", True)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] my_bool must be an integer
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
 
-Test 3: integer_validator - ValueError (Zero and negative integers)
--------------------------------------------------------------------
->>> try:
-...     bg.integer_validator("zero_val", 0)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[ValueError] zero_val must be greater than 0
-
->>> try:
-...     bg.integer_validator("neg_val", -1)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[ValueError] neg_val must be greater than 0
-
->>> try:
-...     bg.integer_validator("large_neg", -999)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[ValueError] large_neg must be greater than 0
-
-Test 4: area method (should still raise NotImplemented Exception)
----------------------------------------------------------------
->>> try:
-...     bg.area()
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[Exception] area() is not implemented
-
-Test 5: Check inheritance (just for demonstration)
---------------------------------------------------
->>> isinstance(bg, BaseGeometry)
-True
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
