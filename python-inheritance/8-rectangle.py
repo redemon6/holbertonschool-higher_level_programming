@@ -9,37 +9,6 @@ and uses the inherited integer_validator for attribute validation.
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class BaseGeometry:
-    """
-    A base class for geometric shapes, providing an interface for area
-    and a utility method for validating integer values.
-    """
-    def area(self):
-        """
-        Public instance method that raises an exception.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Validates that a value is a positive integer.
-
-        Args:
-            name (str): The name of the value.
-            value (int): The value to validate.
-
-        Raises:
-            TypeError: If value is not an integer. The message is
-                       "<name> must be an integer".
-            ValueError: If value is less than or equal to 0. The message is
-                        "<name> must be greater than 0".
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
-
 class Rectangle(BaseGeometry):
     """
     A class representing a rectangle, inheriting validation and structure
