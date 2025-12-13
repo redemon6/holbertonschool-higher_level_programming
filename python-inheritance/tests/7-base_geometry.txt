@@ -1,22 +1,83 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
+Testing cases for the geometry
+------------------------------
 
->>> bg.integer_validator("width", 10)
+First let's import the class
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> bg.integer_validator("height", 1)
+Now Let's check all the cases starting from the first
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
 
->>> bg.integer_validator("age", 0)
-Traceback (most recent call last):
-ValueError: age must be greater than 0
+The first error type
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
 
->>> bg.integer_validator("distance", -3)
-Traceback (most recent call last):
-ValueError: distance must be greater than 0
+Second Error Handle
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
 
->>> bg.integer_validator("name", "John")
-Traceback (most recent call last):
-TypeError: name must be an integer
+Third Error 
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
 
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
+Next
+    >>> bg.area()
+    Traceback (most recent call last):
+      File "<main.py>", line 14, in <module>
+      File "<main.py>", line 5, in area
+    Exception: area() is not implemented
+
+Next
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "", line 1, in 
+        bg.integer_validator()
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Then
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "", line 1, in 
+        bg.integer_validator("age")
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Then
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Then
+    >>> bg.integer_validator("age", [3])
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Then
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Then
+    >>> bg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Then
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
