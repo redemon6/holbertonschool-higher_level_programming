@@ -1,0 +1,46 @@
+1-my_list module
+==================
+
+Tests for the 1-my_list module.
+
+>>> MyList = __import__('1-my_list').MyList
+
+Instantiation and Sorting
+-------------------------
+
+Test 1: Basic sorting of integers
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 5, 10]
+
+Test 2: Original list remains unchanged
+>>> my_list
+[10, 1, 5]
+
+Test 3: Empty list
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+>>> empty_list
+[]
+
+Test 4: List with duplicates and negative numbers
+>>> dup_list = MyList([5, -2, 10, 5, 0])
+>>> dup_list.print_sorted()
+[-2, 0, 5, 5, 10]
+>>> dup_list
+[5, -2, 10, 5, 0]
+
+Test 5: List with one element
+>>> single_list = MyList([42])
+>>> single_list.print_sorted()
+[42]
+
+Test 6: Using the inherited methods (e.g., extend)
+>>> new_list = MyList([1, 2])
+>>> new_list.extend([3, 0])
+>>> new_list.print_sorted()
+[0, 1, 2, 3]
