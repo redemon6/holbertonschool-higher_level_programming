@@ -23,8 +23,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initializes a new Rectangle instance and increments the instance counter.
-
+        Initializes a new Rectangle instance and increments the instance
+        counter.
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
             height (int, optional): The height of the rectangle. Defaults to 0.
@@ -112,9 +112,9 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns the informal, nicely printable string representation of the Rectangle.
-
-        Prints the rectangle using the character(s) specified in `print_symbol`.
+        Returns the informal, nicely printable string representation of the
+        Rectangle.
+        Prints the rectangle using the character(s) specified in print_symbol
         If width or height is 0, it returns an empty string.
 
         Returns:
@@ -123,7 +123,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        # Get the print symbol, prioritizing the instance attribute if it exists
+        # Get the print symbol, prioritizing the instance attribute if it exis
         # This handles cases where print_symbol is set on an instance
         symbol = str(self.print_symbol)
 
@@ -136,8 +136,8 @@ class Rectangle:
         """
         Returns the "official" string representation of the Rectangle.
 
-        The format is designed to be executable by eval() to recreate the instance.
-
+        The format is designed to be executable by eval() to recreate the
+        instance.
         Returns:
             str: A string in the format "Rectangle(width, height)".
         """
