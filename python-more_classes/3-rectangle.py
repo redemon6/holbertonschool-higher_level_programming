@@ -10,8 +10,9 @@ retains the default __repr__ behavior.
 
 class Rectangle:
     """
-    The Rectangle class defines a rectangle object with validated dimensions,
-    methods for area and perimeter, and a custom string representation.
+    The Rectangle class defines a rectangle object with validated 
+    dimensions, methods for area and perimeter, and a custom string 
+    representation.
     """
 
     def __init__(self, width=0, height=0):
@@ -104,8 +105,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns the informal, nicely printable string representation of the Rectangle.
-
+        Returns the informal, nicely printable string representation of the 
+        Rectangle.
         Prints the rectangle using the character '#'. If width or height is 0,
         it returns an empty string.
 
@@ -119,14 +120,3 @@ class Rectangle:
         for _ in range(self.__height):
             rect_rows.append("#" * self.__width)
         return "\n".join(rect_rows)
-
-    def __repr__(self):
-        """
-        Returns the "official" string representation of the Rectangle.
-
-        This representation allows the object to be recreated using eval().
-
-        Returns:
-            str: A string in the format "Rectangle(width, height)".
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
