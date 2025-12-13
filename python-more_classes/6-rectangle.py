@@ -3,23 +3,23 @@
 Module 6-rectangle
 Defines a class Rectangle and tracks the number of active instances.
 This module introduces a class attribute, `number_of_instances`, to demonstrate
-how classes can maintain shared state and track the lifecycle of their instances
-(incremented in __init__ and decremented in __del__).
+how classes can maintain shared state and track the lifecycle of their
+instances (incremented in __init__ and decremented in __del__).
 """
 
 
 class Rectangle:
     """
-    The Rectangle class defines a rectangle object and tracks its instance count.
-    """
+    The Rectangle class defines a rectangle object and tracks its instance
+    count."""
 
     # Public Class Attribute: Tracks the number of active instances
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
-        Initializes a new Rectangle instance and increments the instance counter.
-
+        Initializes a new Rectangle instance and increments the instance
+        counter.
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
             height (int, optional): The height of the rectangle. Defaults to 0.
@@ -107,8 +107,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns the informal, nicely printable string representation of the Rectangle.
-
+        Returns the informal, nicely printable string representation of the
+        Rectangle.
         Prints the rectangle using the character '#'. If width or height is 0,
         it returns an empty string.
 
@@ -127,8 +127,8 @@ class Rectangle:
         """
         Returns the "official" string representation of the Rectangle.
 
-        The format is designed to be executable by eval() to recreate the instance.
-
+        The format is designed to be executable by eval() to recreate the
+        instance.
         Returns:
             str: A string in the format "Rectangle(width, height)".
         """
