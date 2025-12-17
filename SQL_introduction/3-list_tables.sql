@@ -1,3 +1,2 @@
 -- this script shows us all tables inside of defined database
-USE DATABASE;
-SHOW TABLES;
+SHOW TABLES IN DATABASE;
